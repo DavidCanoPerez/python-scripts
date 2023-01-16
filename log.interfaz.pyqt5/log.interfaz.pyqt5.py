@@ -41,6 +41,7 @@ class CommandLogWindow(QWidget):
         label = QLabel(self.tr("Enter command and press INTRO"))
         self.input = QLineEdit()
         self.output = QTextEdit()
+        self.output.setReadOnly(True)
 
         # layout y componentes a layout
         layout = QVBoxLayout(self)
