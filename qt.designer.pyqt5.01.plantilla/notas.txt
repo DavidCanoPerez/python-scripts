@@ -1,0 +1,18 @@
+
+diseñar interfaces en qt designer
+	se puede disponer del archivo .ui para cambiar en cualquier momento
+	diseñar MainWindow en qtdesigner: Nuevo, MainWindow
+		qtdesigner viene incluido en anaconda, en directorio C:\Users\usuario\anaconda3\Library\bin
+		recomendable asociar .ui con C:\Users\usuario\anaconda3\Library\bin\designer.exe
+	el archivo o proyecto de qtdesigner se guarda en formato .ui
+		no ofrece el codigo directamente en .py
+	no es necesario ni conveniente, pero si fuera necesario se puede convertir .ui a .py
+		abrir anaconda promp con permisos de usuario... e introducir comandos
+			cd C:\Users\usuario\anaconda3\Library\bin
+			pyuic5 nombre.ui -o nombre.py
+
+este main.py también puede renombrase a .pyw si fuera necesario
+al lanzar main.py desde spyder tener en cuenta el directorio de trabajo
+	o main.py no encontrará .ui o .py
+		
+
