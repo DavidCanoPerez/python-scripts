@@ -5,7 +5,7 @@
         iterativa
             while
             for
-        condicional
+        selectivas
             if
             else
             if elif
@@ -16,7 +16,7 @@
     while
 """
 a = 1
-while a <= 4:
+while a <= 4:               # while 1 a 4
     print("bucle while: ", str(a))
     a += 1  # incrementa en 1
 
@@ -24,7 +24,7 @@ while a <= 4:
 """ """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     for
 """
-for i in range(1, 11):
+for i in range(1, 11):      # for de 1 a 10
     print("bucle for: ", str(i))
 
 
