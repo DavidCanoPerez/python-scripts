@@ -14,4 +14,5 @@ class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         QMainWindow.__init__(self, parent)
         uic.loadUi("MainWindow.ui", self)
+        self.setAttribute(Qt.WA_DeleteOnClose)  # cancela procesos al cerrar ventana
 
