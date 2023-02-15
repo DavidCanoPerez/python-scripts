@@ -1,0 +1,80 @@
+crear proyecto inicial con django
+
+ide utilizado visual studio code
+	puede utilizarse perfectamente otro ide, por ejemplo spyder 
+		pero su visor de archivos no parece tan adecuado
+		la consola de spyder no sirve de tanta ayuda como la de visual studio code
+
+si no se ha instalado el pip para cmd de windows
+	instalar pip en windows
+		descargar archivo get-pip.py
+			web 	https://bootstrap.pypa.io/get-pip.py
+		abrir cmd como admin e ir a descargas
+			cd C:\Users\usuario\Downloads
+			python get-pip.py
+		verificar instalacion
+			pip --version
+		recomendable añadir archivos a excluidos antivirus
+			C:\Python\Python3.10.1\Scripts\pip.exe
+			C:\Python\Python3.10.1\Scripts\pip3.10.exe
+			C:\Python\Python3.10.1\Scripts\pip3.exe
+		actualizar pip
+			python -m pip install --upgrade pip
+	comandos basicos pip
+			instalar paquete
+				pip install py2exe
+			desinstalar un paquete
+				pip uninstall paquete
+			actualizar paquete
+				pip install --upgrade paquete
+			ayuda para instalar paquetes
+				pip help install
+			ante diferentes versiones de python se puede especificar
+				C:/Python34/Scripts/pip install pip matplotlib
+	
+comprobar si esta django instalado
+	normalmente estara en pip
+		pip list
+
+instalar django por pip
+	pip install django
+
+comprobar version
+	django-admin --version
+
+crear un nuevo proyecto
+	ir con la terminal a la carpeta destino del proyecto
+		en el caso de spyder tambien admite
+			pwd para ver donde esta ubicada
+				normalmente python scripts
+			crear y entrar en carpeta
+				cd <carpeta>
+		en el caso de visual studio code 
+			ver, terminal
+			signo V, cmd
+			cd <carpeta>
+	comando: django-admin startproject ejemplo1
+
+se ha creado
+	manage.py		  administración
+	folder
+		__init__.py
+		asgi.py		  punto de entrada para compatibilidad ASGI en servidores
+		settings.py       configuración
+		urls.py		  urls o direcciones (Uniform Resource Locators)
+		wsgi.py		  entry-point for WSGI-compatible web server
+
+para iniciar el proyecto y levantar servidor de prueba de django
+	cd ejemplo1
+	python manage.py runserver
+	con ctrl se puede abrir con vínculo en el navegador por defecto 
+
+para apagar el servidor con
+	en terminal: ctrl+c  
+
+
+
+
+
+
+
