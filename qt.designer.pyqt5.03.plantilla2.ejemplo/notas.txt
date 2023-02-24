@@ -1,0 +1,21 @@
+
+interfaz simple en qt designer a partir de plantilla2 buscando interacción entre elementos
+
+a partir de plantilla2
+	borrar .ui de plantilla
+abrir spyder 
+	IMPORTANTE cambiar directorio de trabajo a la carpeta del proyecto
+	abrir archivo MainWindow.py
+abrir qt designer
+	nuevo mainwindow
+	añadir un boton y dos textEdit
+	cambiar propiedad texto mostrado por el boton
+	centralwidget, minimumSize 
+		ancho 200
+		alto 200
+	archivo guardar como MainWindow.ui
+trabajar en MainWindow interacción a partir de los elementos en .ui
+		 
+
+		
+
