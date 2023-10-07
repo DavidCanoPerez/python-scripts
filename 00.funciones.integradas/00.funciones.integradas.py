@@ -2,426 +2,478 @@
 
 """
     funciones integradas (built-in functions)
-    están disponibles sin necesidad de importar ninguna biblioteca
+        https://docs.python.org/3.11/library/functions.html
+        están disponibles sin necesidad de importar ninguna biblioteca
+        son:
+                __import__()
+                abs() aiter() all() anext() any() ascii()
+                bin() bool() breakpoint() bytearray() bytes()
+                callable() chr() classmethod() compile() complex()
+                delattr() dict() dir() divmod()
+                enumerate() eval() exec()
+                filter() float() format() frozenset()
+                getattr() globals()
+                hasattr() hash() help() hex()
+                id() input() int() isinstance() issubclass() iter()
+                len() list() locals()
+                map() max() memoryview() min()
+                next()
+                object() oct() open() ord()
+                pow() print() property()
+                range() repr() reversed() round()
+                set() setattr() slice() sorted() staticmethod() str() sum() super()
+                tuple() type()
+                vars()
+                zip()
+        pero típicamente están disponibles muchísimas más, como lower()
+        no se incluyen en algunos listados porque no serían funciones integradas de forma clásica
+        hay diferentes formas de estudiarlas, como clasificándolas, por ejemplo las destinadas a trabajar con tipos de datos (String) u objetos:
+
+                ejemplo String
+                    len() longitud de una cadena.
+                    str() convierte a cadena.
+                    lower() todos los elementos de cadena en minúsculas.
+                    upper(): cadena o componentes de cadena en mayúsculas.
+                    replace(): reemplaza caracter o toda la cadena de elementos.
+
+                ejemplos
+                    cadena = "¡Hola, mundo!"
+                    print(len(cadena))                # 13
+                    print(str(1234))                  # "1234"
+                    print(cadena.lower())             # "¡hola, mundo!"
+                    print(cadena.upper())             # "¡HOLA, MUNDO!"
+                    print(cadena.replace("¡", "¿"))   # "¿Hola, mundo!"
+
+        a continuación sólo ejemplos sin agrupar o clasificar
 """
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     __import__()
-    https://docs.python.org/3/library/functions.html#import__
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     abs()
-    https://docs.python.org/3/library/functions.html#abs
+            en general devuelve el valor absoluto de un número
+            aplicado a diferentes tipos de numeros  
+                    integers - integer absolute value is returned
+                    floating numbers - floating absolute value is returned
+                    complex numbers - magnitude of the number is returned
+                            en el caso de los complejos devuelve su magnitud con 
+                            ayuda del teorema de Pitágoras
+                            complejo = parte_real + parte_imaginaria*j
+                    puede llegar a aplicarse a objetos a través de __abs__()
 """
 
+print("abs------")
 
-"""
+print(abs(-2)) 
+# output: 2
+
+floating = -10.55
+print(abs(floating))
+# output: 10.55
+
+complex = (3 - 4j)
+print(abs(complex))
+# output: 5.0
+
+""" ----------------------------------------------------------------------------------------------------------
     aiter()
-    https://docs.python.org/3/library/functions.html#aiter
 """
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     all()
-    https://docs.python.org/3/library/functions.html#all
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     any()
-    https://docs.python.org/3/library/functions.html#any
+            devuelve True alguno de los elementos de un 
+            iterable (cadenas, listas, tupla, diccionario, set, etc) es verdadero, 
+            si no, devuelve False
+            
 """
 
+print("any------")
 
-"""
+boolean_list = ['True', 'False', 'True']
+result = any(boolean_list)
+print('ejemplo1', result)
+# output: True
+
+lista = [0,0,0,1,0,0,0,0]
+print('ejemplo2', any(lista))
+# output: True
+
+l = []
+print('ejemplo3', any(l))
+# output: False
+
+str1 = 'Hello World'
+print('ejemplo4', any(str1))
+# output: True
+
+str2 = '0'
+print('ejemplo5', any(str2))    # '0' CUIDADO se considera una cadena válida
+# output: True
+
+str3 = ''
+print('ejemplo6', any(str3))    # cadena vacía
+# output: False
+
+dict1 = {0: 'False', False: 0}      # key 0 and False are False
+print('ejemplo7', any(dict1))
+# output: False
+
+dict2 = {1: 'John', 2: 'David', 3: 'Kim'} # all keys are True
+print('ejemplo8', any(dict2))
+# output: True
+
+dict3 = {0: 'False', 1: 'True'}     # few keys are True
+print('ejemplo9', any(dict3))
+# output: True
+
+dict4 = {}      # empty dict
+print('ejemplo10', any(dict4))
+# output: False
+
+dict5 = {'0': False, 'False': 1}    # ATTENTION a key of string is True
+print('ejemplo11', any(dict5))
+# output: True
+
+""" ----------------------------------------------------------------------------------------------------------
     anext()
-    https://docs.python.org/3/library/functions.html#anext
 """
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     ascii()
-    https://docs.python.org/3/library/functions.html#ascii
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     bin()
-    https://docs.python.org/3/library/functions.html#bin
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     bool()
-    https://docs.python.org/3/library/functions.html#bool
 """
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     breakpoint()
-    https://docs.python.org/3/library/functions.html#breakpoint
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     bytearray()
-    https://docs.python.org/3/library/functions.html#func-bytearray
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     bytes()
-    https://docs.python.org/3/library/functions.html#func-bytes
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     callable()
-    https://docs.python.org/3/library/functions.html#callable
 """
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     chr()
-    https://docs.python.org/3/library/functions.html#chr
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     classmethod()
-    https://docs.python.org/3/library/functions.html#classmethod
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     compile()
-    https://docs.python.org/3/library/functions.html#compile
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     complex()
-    https://docs.python.org/3/library/functions.html#complex
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     delattr()
-    https://docs.python.org/3/library/functions.html#delattr
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     dict()
-    https://docs.python.org/3/library/functions.html#func-dict
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     dir()
-    https://docs.python.org/3/library/functions.html#dir
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     divmod()
-    https://docs.python.org/3/library/functions.html#divmod
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     enumerate()
-    https://docs.python.org/3/library/functions.html#enumerate
 """
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     eval()
-    https://docs.python.org/3/library/functions.html#eval
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     exec()
-    https://docs.python.org/3/library/functions.html#exec
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     filter()
-    https://docs.python.org/3/library/functions.html#filter
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     float()
-    https://docs.python.org/3/library/functions.html#float
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     format()
-    https://docs.python.org/3/library/functions.html#format
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     frozenset()
-    https://docs.python.org/3/library/functions.html#func-frozenset
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     getattr()
-    https://docs.python.org/3/library/functions.html#getattr
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     globals()
-    https://docs.python.org/3/library/functions.html#globals
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     hasattr()
-    https://docs.python.org/3/library/functions.html#hasattr
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     hash()
-    https://docs.python.org/3/library/functions.html#hash
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     help()
-    https://docs.python.org/3/library/functions.html#help
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     hex()
-    https://docs.python.org/3/library/functions.html#hex
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     id()
-    https://docs.python.org/3/library/functions.html#id
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     input()
-    https://docs.python.org/3/library/functions.html#input
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     int()
-    https://docs.python.org/3/library/functions.html#int
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     isinstance()
-    https://docs.python.org/3/library/functions.html#isinstance
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     issubclass()
-    https://docs.python.org/3/library/functions.html#issubclass
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     iter()
-    https://docs.python.org/3/library/functions.html#iter
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     len()
-    https://docs.python.org/3/library/functions.html#len
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     list()
-    https://docs.python.org/3/library/functions.html#func-list
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     locals()
-    https://docs.python.org/3/library/functions.html#locals
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     map()
-    https://docs.python.org/3/library/functions.html#map
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     max()
-    https://docs.python.org/3/library/functions.html#max
+            devuelve el máximo valor
 """
 
+print("max------")
 
-"""
+m = [1, 4, -2, 7, 3]
+print(max(m))
+# outuput: 7
+
+print(max("a", "g", "c", "z"))
+# outuput: z
+
+""" ----------------------------------------------------------------------------------------------------------
     memoryview()
-    https://docs.python.org/3/library/functions.html#func-memoryview
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     min()
-    https://docs.python.org/3/library/functions.html#min
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     next()
-    https://docs.python.org/3/library/functions.html#next
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     object()
-    https://docs.python.org/3/library/functions.html#object
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     oct()
-    https://docs.python.org/3/library/functions.html#oct
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     open()
-    https://docs.python.org/3/library/functions.html#open
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     ord()
-    https://docs.python.org/3/library/functions.html#ord
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     pow()
-    https://docs.python.org/3/library/functions.html#pow
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     print()
-    https://docs.python.org/3/library/functions.html#print
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     property()
-    https://docs.python.org/3/library/functions.html#property
 """
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     range()
-    https://docs.python.org/3/library/functions.html#func-range
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     repr()
-    https://docs.python.org/3/library/functions.html#repr
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     reversed()
-    https://docs.python.org/3/library/functions.html#reversed
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     round()
-    https://docs.python.org/3/library/functions.html#round
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     set()
-    https://docs.python.org/3/library/functions.html#func-set
+
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     setattr()
-    https://docs.python.org/3/library/functions.html#setattr
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     slice()
-    https://docs.python.org/3/library/functions.html#slice
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     sorted()
-    https://docs.python.org/3/library/functions.html#sorted
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     staticmethod()
-    https://docs.python.org/3/library/functions.html#staticmethod
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     str()
-    https://docs.python.org/3/library/functions.html#func-str
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     sum()
-    https://docs.python.org/3/library/functions.html#sum
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     super()
-    https://docs.python.org/3/library/functions.html#super
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     tuple()
-    https://docs.python.org/3/library/functions.html#func-tuple
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     type()
-    https://docs.python.org/3/library/functions.html#type
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     vars()
-    https://docs.python.org/3/library/functions.html#vars
 """
 
 
-"""
+""" ----------------------------------------------------------------------------------------------------------
     zip()
-    https://docs.python.org/3/library/functions.html#zip
 """
 
 
