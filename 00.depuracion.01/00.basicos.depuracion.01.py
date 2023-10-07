@@ -13,7 +13,7 @@
         n
             (next) continua ejecucion de programa
         q 
-            finaliza depuracion
+            (quit) finaliza depuracion
 """
 
 import pdb
