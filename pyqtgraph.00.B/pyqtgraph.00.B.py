@@ -2,6 +2,8 @@
 
 """
     https://www.pyqtgraph.org/
+    
+    ejemplos del potencial de estas librerias
 """
 
 import pyqtgraph.examples

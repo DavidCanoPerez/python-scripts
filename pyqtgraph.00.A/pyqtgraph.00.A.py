@@ -9,6 +9,9 @@
     
     pip install pyqtgraph
     
+    A pure-python graphics and GUI library built on PyQt / 
+    PySide and numpy for use in mathematics / 
+    scientific / engineering applications.
 """
 
 
