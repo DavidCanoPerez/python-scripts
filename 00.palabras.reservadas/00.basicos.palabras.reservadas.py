@@ -1,80 +1,78 @@
 # -*- coding: utf-8 -*-
 
-"""
-    https://recursospython.com/guias-y-manuales/palabras-reservadas-del-lenguaje/
-    https://ellibrodepython.com/palabras-reservadas-python
-"""
+#    practicar también en intérprete, 
+#
+#    palabras reservadas en python
+#    
+#    el módulo keyword (keyword.py) se distribuye junto con la librería estándar 
+#    es generado automáticamente a partir del archivo graminit.c 
+#    perteneciente al código de fuente del intérprete 
+#    incorpora una lista que contiene el conjunto de palabras resevadas, 
+#    permite comprobar la definición de un keyword
+#    
+#    comprobar en intérprete:
+#        >>> from keyword import iskeyword, kwlist
+#        >>> kwlist
+#        >>> iskeyword("and")
+#        >>> iskeyword("print")
+#    
+#    además la función help() puede recibir como argumento el 
+#    nombre de una palabra reservada como una cadena y mostrar su uso
+#        >>> help("import")
+#
+#    sobre el orden
+#        comienza por mayúscula: False, None y True
+#        comienza en guión bajo: __peg_parser__
+#        todo minúscula: and ... yield
 
-"""
-    practicar estos ejemplos también en intérprete, 
+# ---------------------------------------------------------------------------------------------
+#   False
+#       valor booleano, 
+#       resultado de operaciones de comparación u operaciones lógicas
+# ---------------------------------------------------------------------------------------------
 
-    palabras reservadas en python
-    
-    el módulo keyword (keyword.py) se distribuye junto con la librería estándar 
-    es generado automáticamente a partir del archivo graminit.c 
-    perteneciente al código de fuente del intérprete 
-    incorpora una lista que contiene el conjunto de palabras resevadas, 
-    permite comprobar la definición de un keyword
-    
-    comprobar en intérprete:
-        >>> from keyword import iskeyword, kwlist
-        >>> kwlist
-        >>> iskeyword("and")
-        >>> iskeyword("print")
-    
-    además la función help() puede recibir como argumento el 
-    nombre de una palabra reservada como una cadena y mostrar su uso
-        >>> help("import")
 
-    sobre el orden
-        comienza por mayúscula: False, None y True
-        comienza en guión bajo: __peg_parser__
-        todo minúscula: and ... yield
-"""
 
-""" ---------------------------------------------------------------------------------------------
-    False
-        valor booleano, 
-        resultado de operaciones de comparación u operaciones lógicas
-"""
-
-""" ---------------------------------------------------------------------------------------------
-    None
-        representa a un valor nulo
-"""
+# ---------------------------------------------------------------------------------------------
+#   None
+#       representa a un valor nulo
+# ---------------------------------------------------------------------------------------------
 
 # se devuelve por defecto cuando una función no cuenta con un return
 def function_none():
     pass
 print("NONE ejemplo:", function_none())
 
+# ---------------------------------------------------------------------------------------------
+#   True
+#       valor booleano, contrario a False, 
+#       resultado de operaciones de comparación u operaciones logicas
+# ---------------------------------------------------------------------------------------------
 
-""" ---------------------------------------------------------------------------------------------
-    True
-        valor booleano, contrario a False, 
-        resultado de operaciones de comparación u operaciones logicas
-"""
 
-""" ---------------------------------------------------------------------------------------------
-    __peg_parser__
-        Llamado huevo de pascua, relacionado con el lanzamiento del nuevo analizador PEG no 
-        está definido aún.
-"""
 
-""" ---------------------------------------------------------------------------------------------
-    and
-        operador lógico
-"""
+# ---------------------------------------------------------------------------------------------
+#   __peg_parser__
+#       Llamado huevo de pascua, relacionado con el lanzamiento del nuevo analizador PEG 
+#       no está definido aún.
+# ---------------------------------------------------------------------------------------------
+
+
+
+# ---------------------------------------------------------------------------------------------
+#   and
+#       operador lógico
+# ---------------------------------------------------------------------------------------------
 
 condition1= True
 condition2= True   # probar a cambiar a False
 if condition1 and condition2 == True:
     print("AND ejemplo, True")
 
-""" ---------------------------------------------------------------------------------------------
-    as
-        crea un alias al importar un módulo.
-"""
+# ---------------------------------------------------------------------------------------------
+#   as
+#       crea un alias al importar un módulo.
+# ---------------------------------------------------------------------------------------------
 
 # ejemplo 1
 import tkinter as tk
@@ -85,31 +83,32 @@ with socket.socket() as s:
     ...
     s.close()
 
+# ---------------------------------------------------------------------------------------------
+#   assert
+#       se utiliza con fines de depuración
+# ---------------------------------------------------------------------------------------------
 
-""" ---------------------------------------------------------------------------------------------
-    assert
-        se utiliza con fines de depuración
-"""
 
-""" ---------------------------------------------------------------------------------------------
-    async
-        se utiliza en código concurrente
-        se emplea para definir una función como asíncrona 
-"""
+
+# ---------------------------------------------------------------------------------------------
+#   async
+#       se utiliza en código concurrente
+#       se emplea para definir una función como asíncrona 
+# ---------------------------------------------------------------------------------------------
 
 async def a_f():
     pass
 
+# ---------------------------------------------------------------------------------------------
+#   await
+#       se utiliza en código concurrente
+#       proporcionada por la biblioteca 'asyncio'
+#        
+#       sólo puede ser invocada desde una función asíncrona
+#       pausa la ejecución de la función hasta que el resultado esté disponible
+# ---------------------------------------------------------------------------------------------
 
-""" ---------------------------------------------------------------------------------------------
-    await
-        se utiliza en código concurrente
-        proporcionada por la biblioteca 'asyncio'
-        
-        sólo puede ser invocada desde una función asíncrona
-        pausa la ejecución de la función hasta que el resultado esté disponible
-"""
-
+# ejemplo para interprete
 """
 import asyncio
 async def e():
@@ -119,12 +118,11 @@ async def e():
 asyncio.run(e())
 """
 
-
-
-""" ---------------------------------------------------------------------------------------------
-    break
-        se utiliza en el interior de los bucles for y while para alterar su comportamiento normal
-"""
+# ---------------------------------------------------------------------------------------------
+#   break
+#       se utiliza en el interior de los bucles for y while para 
+#       alterar su comportamiento normal
+# ---------------------------------------------------------------------------------------------
 
 # bucle infinito
 while True:
@@ -140,22 +138,20 @@ for i in range(10):
         # out: su salida normal sería de 0 a 9
         # out: con este break es de 0 a 4
 
-
-""" ---------------------------------------------------------------------------------------------
-    class
-        define una nueva clase
-"""
+# ---------------------------------------------------------------------------------------------
+#   class
+#       define una nueva clase
+# ---------------------------------------------------------------------------------------------
 
 class Ejemplo:
-    def __init__(self):     # metodo que se ejecuta inmediatamente al crear objeto de la clase
+    def __init__(self):  # metodo que se ejecuta inmediatamente al crear objeto de la clase
         print("CLASE de ejemplo")
 e = Ejemplo()
 
-
-""" ---------------------------------------------------------------------------------------------
-    continue
-        se utiliza en el interior de los bucles for y while
-"""
+# ---------------------------------------------------------------------------------------------
+#   continue
+#       se utiliza en el interior de los bucles for y while
+# ---------------------------------------------------------------------------------------------
 
 for i in range(5):  # bucle de 0 a 4
     if i == 3:
@@ -171,21 +167,19 @@ while num < 10:
         continue
     print("CONTINUE while", num)
 
-
-""" ---------------------------------------------------------------------------------------------
-    def 
-        define una función 
-"""
+# ---------------------------------------------------------------------------------------------
+#   def 
+#       define una función 
+# ---------------------------------------------------------------------------------------------
 
 def func(a):
     print(a)
 func("DEF ejemplo")
 
-
-""" ---------------------------------------------------------------------------------------------
-    del
-        eliminar un objeto
-"""
+# ---------------------------------------------------------------------------------------------
+#   del
+#       eliminar un objeto
+# ---------------------------------------------------------------------------------------------
 
 example_list = [1, 2, 3, 4, 5]
 del example_list[1]
@@ -205,33 +199,32 @@ tupla = (1, 2, 3)
 # sin embargo, como cualquier objeto si se puede eliminar toda la tupla
 del tupla
 
-
-""" ---------------------------------------------------------------------------------------------
-    elif
-        se usa en declaraciones condicionales, igual 'else' e 'if'
-"""
-
+# ---------------------------------------------------------------------------------------------
+#   elif
+#       se usa en declaraciones condicionales, igual 'else' e 'if'
+# ---------------------------------------------------------------------------------------------
 
 
-""" ---------------------------------------------------------------------------------------------
-    else
-        se usa en declaraciones condicionales, igual 'elif' e 'if'
-        también se utiliza en excepciones
-"""
+
+# ---------------------------------------------------------------------------------------------
+#   else
+#       se usa en declaraciones condicionales, igual 'elif' e 'if'
+#       también se utiliza en excepciones
+# ---------------------------------------------------------------------------------------------
 
 
-""" ---------------------------------------------------------------------------------------------
-    except
-        se usa para crear excepciones
-        qué hacer cuando ocurre una excepción, igual que 'raise' y 'try'
-"""
+# ---------------------------------------------------------------------------------------------
+#   except
+#       se usa para crear excepciones
+#       qué hacer cuando ocurre una excepción, igual que 'raise' y 'try'
+# ---------------------------------------------------------------------------------------------
 
 
-""" ---------------------------------------------------------------------------------------------
-    finally 
-        Su uso garantiza que el bloque de código dentro de él se ejecute incluso si 
-        hay excepción no controlada
-"""
+# ---------------------------------------------------------------------------------------------
+#   finally 
+#       su uso garantiza que el bloque de código dentro de él se ejecute incluso si 
+#       hay excepción no controlada
+# ---------------------------------------------------------------------------------------------
 
 def control_exception_func():
     print("FINALLY función control del posible error")
@@ -245,10 +238,10 @@ finally:
     control_exception_func()
 
 
-""" ---------------------------------------------------------------------------------------------
-    for
-        uno de los bucles principales junto con while
-"""
+# ---------------------------------------------------------------------------------------------
+#   for
+#       uno de los bucles principales junto con while
+# ---------------------------------------------------------------------------------------------
 
 # ejemplo 1
 for i in (1, 2, 3):     # bucle de 1 a 3
@@ -259,25 +252,24 @@ for i in range(5):      # bucle de 0 a 4
     print("FOR ejemplo2", i)
 
 
-""" ---------------------------------------------------------------------------------------------
-    from
-        importa partes específicas de un módulo
-"""
+# ---------------------------------------------------------------------------------------------
+#   from
+#       importa partes específicas de un módulo
+# ---------------------------------------------------------------------------------------------
 
 from PyQt5.QtWidgets import QApplication
 
+# ---------------------------------------------------------------------------------------------
+#   global
+#       declarar una variable global
+# ---------------------------------------------------------------------------------------------
 
-""" ---------------------------------------------------------------------------------------------
-    global
-        declarar una variable global
-"""
 
-
-""" ---------------------------------------------------------------------------------------------
-    if
-        declaraciones condicionales, 
-        se complementa con 'elif' y 'else' también reservadas
-"""
+# ---------------------------------------------------------------------------------------------
+#   if
+#       declaraciones condicionales, 
+#       se complementa con 'elif' y 'else' también reservadas
+# ---------------------------------------------------------------------------------------------
 
 var = 1     # probar valores 1,2,3 y otros
 if var == 1:
@@ -289,56 +281,86 @@ elif var == 3:
 else:
     print("IF ejemplo, valor 4")
 
-""" ---------------------------------------------------------------------------------------------
-    import
-        importa un módulo
-"""
+# ---------------------------------------------------------------------------------------------
+#   import
+#       importa un módulo
+# ---------------------------------------------------------------------------------------------
 
 import numpy
 
 import tkinter as tk
 
-""" ---------------------------------------------------------------------------------------------
-    in
-        comprueba si un valor está presente en una lista, tupla, etc. 
-        devuelve True si el valor está presente, por el contrario devuelve False
-"""
-
-""" ---------------------------------------------------------------------------------------------
-    is
-        Se usa para probar si las dos variables se refieren al mismo objeto. 
-        Devuelve True si los objetos son idénticos y False si no
-"""
-
-""" ---------------------------------------------------------------------------------------------
-    lambda
-        equivale a una función
-        que puede ser anónima, también se puede declarar su nombre
-        
-    sintaxis: 
-            lambda args: result
-            func_name = lambda args: result
-    equivalente a:
-            def func_name(args):
-                return result
-            
-"""
-
-def f(x, y, z=1):
-    return (x+y) * z
-re1 = f(1, 2, 3)
-print(f"LAMBDA function no lambda: {re1}")
+# ---------------------------------------------------------------------------------------------
+#   in
+#       comprueba si un valor está presente en una lista, tupla, etc. 
+#       devuelve True si el valor está presente, por el contrario devuelve False
+# ---------------------------------------------------------------------------------------------
 
 
-f = lambda x, y, z=1: (x+y) * z
-re2 = f(1, 2, 3)
-print(f"LAMBDA function lambda: {re2}")
+
+# ---------------------------------------------------------------------------------------------
+#   is
+#       se usa para probar si las dos variables se refieren al mismo objeto.
+#       devuelve True si los objetos son idénticos y False si no es así
+# ---------------------------------------------------------------------------------------------
 
 
-""" ---------------------------------------------------------------------------------------------
-    nonlocal
-        declara una variable u objeto no local
-"""
+
+# ---------------------------------------------------------------------------------------------
+#   lambda
+#       la función lambda equivale a una función regular o normal pero se diferencia
+#       por ser breve función sin nombre o anónimas que se pueden definir 
+#       en una única líneas para realizar tareas simples            
+# ---------------------------------------------------------------------------------------------
+
+# definición de una función regular o normal que suma dos números
+def suma(x, y):
+    return x + y
+resultado = suma(2, 3)
+print(f"LAMBDA función suma no lambda aún: {resultado}")  # output: 8
+
+# definición de función lambda equivalente a la anterior
+suma_l = lambda x, y: x + y
+    # lambda argumentos: expresion_resultado
+    # argumentos separados por comas, puede tener cero o más argumentos
+    # la expresión se evalúa y devuelve como resultado
+resultado = suma_l(3, 4)
+print(f"LAMBDA función suma_l: {resultado}")  # output: 8
+
+# definición de una función lambda sin argumentos
+saludo = lambda: "¡Hola, mundo!"
+mensaje = saludo()
+print(f"LAMBDA sin argumento: {mensaje}")  # output: "¡Hola, mundo!"
+
+# las funciones lambda sin argumentos son utiles en:
+#       1) eventos de botones y de interfaz gráfica
+#           para llamar a métodos desde los propios argumentos del botón
+#       2) ordenar elementos 
+#       3) CUIDADO aunque en ocasiones se ha ejemplificado el uso de 
+#       lambdas sin argumentos para establecer valores iniciales predeterminados,
+#       pero no sería recomendable en diccionarios y listas
+
+# ejemplo correcto, ordena lista de cadenas por longitud
+palabras = ["manzana", "naranja", "banana", "cereza", "dátil", "uva"]
+palabras.sort(key=lambda word: len(word))
+print(f"LAMBDA sin argumento, palabras: {palabras}")
+    # misma longitud de manzana y naranja aparecen por orden alfabético
+
+# CUIDADO ejemplo incorrecto, pretende crear diccionario con valores predeterminados
+default_values = dict.fromkeys(["a", "b", "c"], lambda: 0)
+print(f"LAMBDA default_values: {default_values}")
+    # CUIDADO no toma valores iniciales de 0
+
+# CUIDADO ejemplo incorrecto, pretende iniciar lista con valores iniciales
+n = 5
+valores_iniciales = [lambda: 0] * n
+print(f"LAMBDA valores_iniciales: {valores_iniciales}")
+    # CUIDADO no toma valores iniciales de 0
+
+# ---------------------------------------------------------------------------------------------
+#   nonlocal
+#       declara una variable u objeto no local
+# ---------------------------------------------------------------------------------------------
 
 def a():
     i = 1
@@ -349,10 +371,10 @@ def a():
     print("NONLOCAL", i)
 a()
 
-""" ---------------------------------------------------------------------------------------------
-    not
-        operador lógico    
-"""
+# ---------------------------------------------------------------------------------------------
+#   not
+#       operador lógico    
+# ---------------------------------------------------------------------------------------------
 
 # ejemplo 1
 print("NOT ejemplo", not True)
@@ -372,10 +394,10 @@ print("NOT ejemplo", not False)
     >>> not x > y       out:True
     """
 
-""" ---------------------------------------------------------------------------------------------
-    or
-        operador lógico
-"""
+# ---------------------------------------------------------------------------------------------
+#   or
+#       operador lógico
+# ---------------------------------------------------------------------------------------------
 
 print("OR", True or False)
 print("OR", True or True)
@@ -388,13 +410,11 @@ print("OR", False or False)
     >>> False or False   #out: False
     """
 
-""" ---------------------------------------------------------------------------------------------
-    pass
-        es utilizada para rellenar espacios requeridos por sintaxis para evitar errores
-        
-        en ocasiones se considera una declaración nula, ya que no pasa nada cuando se ejecuta 
-        
-"""
+# ---------------------------------------------------------------------------------------------
+#   pass
+#       es utilizada para rellenar espacios requeridos por sintaxis para evitar errores
+#       en ocasiones se considera una declaración nula, ya que no pasa nada cuando se ejecuta 
+# ---------------------------------------------------------------------------------------------
 
 def f():
     pass
@@ -407,37 +427,31 @@ def f_finalizada():
     print("PASS ejemplo")
 f_finalizada()
 
-""" ---------------------------------------------------------------------------------------------
-    raise
-        se usa para crear excepciones, qué hacer cuando ocurre una excepción, 
-        igual que 'except' y 'try'
-"""
+# ---------------------------------------------------------------------------------------------
+#   raise
+#       se usa para crear excepciones, qué hacer cuando ocurre una excepción, 
+#       igual que 'except' y 'try'
+# ---------------------------------------------------------------------------------------------
 
 """ ejemplo en intérprete
     raise NameError
     out: NameError
     """
 
-
-""" ---------------------------------------------------------------------------------------------
-    return
-        se usa en una función para devolver un valor como resultado de operaciones
-
-    posibilidades:
-        return de un valor
-        return de varios valores
-        return None
-        return vacío (return void).
-        función sin return
-        
-    el valor puede ser:
-        cadena o string
-        un número
-        un booleano
-        una lista
-        un diccionario
-        ...
-"""
+# ---------------------------------------------------------------------------------------------
+#   return
+#       se usa en una función para devolver un valor como resultado de operaciones
+#
+#   posibilidades:
+#       return de un valor
+#       return de varios valores
+#       return None
+#       return vacío (return void).
+#       función sin return
+#        
+#   el valor puede ser:
+#       string, número, booleano, lista, diccionario y otros
+# ---------------------------------------------------------------------------------------------
 
 # ejemplo 1, enteros a sumar
 n1=1
@@ -463,22 +477,20 @@ def function_none():
     pass
 print("RETURN ejemplo3:", function_none())
 
-
-""" ---------------------------------------------------------------------------------------------
-    try
-        se usa junto con 'except' para crear excepciones 
-"""
+# ---------------------------------------------------------------------------------------------
+#   try
+#       se usa junto con 'except' para crear excepciones 
+# ---------------------------------------------------------------------------------------------
 
 try:
     this_func_does_not_exist()
 except Exception:
     print("TRY error indicado sin excepción propagada")
 
-
-""" ---------------------------------------------------------------------------------------------
-    while
-        Se usa para realizar bucles.
-"""
+# ---------------------------------------------------------------------------------------------
+#   while
+#       se usa para realizar bucles
+# ---------------------------------------------------------------------------------------------
 
 # bucle infinito
 while True:
@@ -491,12 +503,11 @@ while var < 3:
     print("WHILE procesando", var)
     var += 1 # incrementa valor de variable var en 1
 
-
-""" ---------------------------------------------------------------------------------------------
-    with
-        se usa para simplificar el manejo de excepciones
-        de forma compleja encapsula bloques de código
-"""
+# ---------------------------------------------------------------------------------------------
+#   with
+#       se usa para simplificar el manejo de excepciones
+#       de forma compleja encapsula bloques de código
+# ---------------------------------------------------------------------------------------------
 
 # uso, simple, 
 import socket
@@ -520,15 +531,14 @@ try:
 except Exception:
     print ("WITH uso complejo")
 
-
-""" ---------------------------------------------------------------------------------------------
-    yield
-        se comporta de forma similar a return, con la diferencia de que en lugar de 
-        retornar un valor, retorna elementos que forman parte un generador, 
-        es la palabra yield la que transforma la función en un generador,
-        
-        https://docs.python.org/3/reference/expressions.html#yieldexpr
-"""
+# ---------------------------------------------------------------------------------------------
+#   yield
+#       se comporta de forma similar a return, con la diferencia de que en lugar de 
+#       retornar un valor, retorna elementos que forman parte un generador, 
+#       es la palabra yield la que transforma la función en un generador,
+#        
+#       https://docs.python.org/3/reference/expressions.html#yieldexpr
+# ---------------------------------------------------------------------------------------------
 
 def f():
     yield 1
@@ -555,7 +565,6 @@ print("  Contador instanciado")
 for i in mycont:
     print(f"  valor leido del iterador={i}") 
 print("  Fin")
-
 
 
 
