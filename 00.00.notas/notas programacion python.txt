@@ -1,0 +1,115 @@
+
+python
+	comprobar en cmd si no se tiene instalado
+		python -V
+		LA V EN MAYUSCULAS
+
+	web descargar para instalacion	
+		https://www.python.org/downloads/
+	carpeta instalacion de python
+		C:\Python\Python3.10.1
+	variable de entorno
+		panel de control, sistema, configuracion avanzada, opciones avanzadas
+			variables del sistema
+				C:\Python3.10.1\;
+				C:\Python\Python3.10.1\Scripts;
+	comando cmd para comprobar instalacion y version
+		python
+	documentacion
+		https://docs.python.org/3.10/contents.html
+
+anaconda
+
+	anaconda incluye todo lo necesario hasta su propia instalacion d python
+	su propio pip y list
+	incluye variables automaticamente en path del sistema
+
+	NOTAS
+		SIEMPRE TENER EN CUENTA EL DIRECTORIO DE TRABAJO o working directory
+			por mas que esté marcado en tools, preferences, run, working directory settings, the current...
+			no funciona en algunos casos, como al crear objetos desde clases declaradas en otros archivos .py
+
+		carpeta de instalacion		C:\ProgramData\Anaconda3
+		agregar path de sistema		C:\ProgramData\Anaconda3\Scripts
+	
+	entorno anaconda 
+		ANTE ERRORES ABRIR CON PERMISOS DE ADMINISTRADOR
+		anaconda tiene su propio pip (además de su list)
+			comprobar en anaconda prompt	
+				pip --version
+				tamb compruebese las diferentes salidas de 
+					conda list
+					pip list
+			interprete python en directorio raiz conda
+				abrir conda prompt
+				python
+				aparecen signos >>>
+				print ("Hola mundo")
+				exit()
+			interprete en directorio
+				abrir conda prompt
+				cd ruta
+				python
+				exit()
+			ejecutar programa, por ejemplo holamundo.py en directorio desde anaconda prompt
+				contenido de holamundo.py:	print("Hola mundo")		guardar con bloc de notas y extension .py
+				abrir conda prompt
+				cd ruta
+				python holamundo.py
+		conda prompt:
+			lista de paquetes instalados
+				conda list
+			instalar paquete
+				conda install paquete
+			instalar paquete version especifica
+				conda install pandas=1.1
+			instalar paquete de repositorio especifico
+				conda install scipy --channel nombreRepositorio
+			actualizar paquete
+				conda update nombrePaquete
+			entornos
+				conda info -e
+					informa del entorno activo (con asterisco), sus nombres y directorios
+				
+instalar pip en windows (fuera de anaconda, para visual studio code u otro)
+	descargar archivo get-pip.py
+		web 	https://bootstrap.pypa.io/get-pip.py
+	abrir cmd como admin e ir a descargas
+		cd C:\Users\...\Downloads
+		python get-pip.py
+	verificar instalacion
+		pip --version
+	actualizar pip
+		python -m pip install --upgrade pip
+	comandos pip
+		instalar paquete
+			pip install py2exe
+		desinstalar un paquete
+			pip uninstall paquete
+		actualizar paquete
+			pip install --upgrade paquete
+		ayuda para instalar paquetes
+			pip help install
+		actualizar pip
+			python.exe -m pip install --upgrade pip
+
+abrir programa .py desde cmd
+	cd ruta
+	python main.py
+		tambien funciona py main.py
+abrir interprete en el propio cmd
+	(opcional preferible por si se guarda algo) cd ruta 
+	(o nueva carpeta) mkdir tmp
+		cd tmp 
+	python
+	(ya aparece >>>)
+	exit()
+
+carpeta de instalación de modulos de conda
+	C:\users\...\anaconda3\lib\site-packages
+carpeta de instalacion de modulos pip en cmd
+	C:\Python\Python3.10.1\Lib\site-packages
+
+
+
+
