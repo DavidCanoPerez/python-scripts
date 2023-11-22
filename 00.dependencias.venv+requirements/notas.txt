@@ -1,0 +1,50 @@
+
+
+virtual env
+	archivos y dependencias del proyecto
+requirements
+	listado de dependencias
+
+en windows, desde terminal de visual studio code:
+
+	crear carpeta de proyecto y arrastrarla a visual studio code, terminal, new terminal
+	comprobar que se tiene instalado virtualenv buscandolo en pip list
+	o con comando pip index versions <package_name>
+	(recomentable si no se tiene crear carpeta scr) mkdir scr
+        preparar entorno virtual del proyecto, crear su carpeta en raiz del proyecto
+        	virtualenv env
+	basta lo anterior pero es acortado de: python -m virtualenv env
+        activar entorno virtual
+        	.\env\Scripts\activate
+        o moverse con la terminal en base a cd y: .\activate
+	en la terminal aparecerá entre paréntesis la carpeta del entorno indicando que el entorno está activo
+	puede comprobarse los archivos base con pip list en cualquier directorio si el entorno esta activo (env)
+	instalar pytest para comprobar dependencias: pip install pytest
+	generar requirements.txt
+		pip freeze > requirements.txt
+	se ha generado un listado con las dependencias de los modulos
+	instalar dependencias desde requirements.txt
+		pip install -r requirements.txt
+	desactivar entorno virtual
+		deactivate	
+
+otras notas para conda o linux
+	conda
+		por defecto en entorno virtual base (base)
+		conda deactivate
+	linux
+		pip freeze --all???
+
+mas informacion: https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
+
+
+
+
+
+
+
+
+
+
+
+
